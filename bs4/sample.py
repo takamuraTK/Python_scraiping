@@ -39,4 +39,19 @@ soup_text = BeautifulSoup(html, 'html.parser')
 text = soup_text.find('div').get_text()
 # print(text)
 text = soup_text.find('div').get_text(strip=True)
-print(text)
+# print(text)
+
+# 属性を取得する。
+# よくあるhref属性取得は以下の用に取得
+html = """<a href="http://hoge.hoge">リンクテキスト</a>"""
+soup_href = BeautifulSoup(html, 'html.parser')
+href = soup_href.find('a')['href']
+# print(href)
+
+# stripped_stringsを使うことで子要素に含まれるテキストを1つずつ返すジェネレーターを作成できる。
+# とりだすにはList型にするか、For文を用いる。
+stripped = soup.find('div').stripped_strings
+stripped_list = list(soup.find('div').stripped_strings)
+# print(stripped_list)
+
+
