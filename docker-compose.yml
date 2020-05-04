@@ -1,0 +1,8 @@
+version: '3.7'
+
+services:
+  scraiping:
+    build: .
+    volumes:
+      - .:/code
+    env_file: docker-compose.env

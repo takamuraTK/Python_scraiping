@@ -1,9 +1,13 @@
 from selenium import webdriver
-from PIL import Image
+# from PIL import Image
 import pandas as pd
 
-# browser = webdriver.Firefox()
-browser = webdriver.Chrome()
+options = webdriver.ChromeOptions()
+options.add_argument('--headless')
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-dev-shm-usage')
+# option込でChromeを起動
+browser = webdriver.Chrome(options=options)
 
 browser.get('https://scraping-for-beginner.herokuapp.com/login_page')
 
