@@ -30,6 +30,7 @@ RUN pip install pandas
 RUN pip install Pillow
 RUN pip install beautifulsoup4
 RUN pip install requests
+RUN pip install scrapy
 
 COPY . /code/
 COPY .zshrc /root/
